@@ -7,7 +7,7 @@ import jakarta.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pelisMariaDB");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pelisH2");
         EntityManager em = emf.createEntityManager();
         System.out.println("Hello world!");
     }

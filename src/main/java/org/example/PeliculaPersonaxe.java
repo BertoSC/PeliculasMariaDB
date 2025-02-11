@@ -1,29 +1,44 @@
 package org.example;
 
 import jakarta.persistence.*;
-
 @Entity
 @IdClass(PeliculaPersonaxeId.class)
 public class PeliculaPersonaxe {
+    @Id
+    @Column(name = "idPelicula", insertable = false, updatable = false)
+    private Integer idPelicula;
+
+    @Id
+    @Column(name = "idPersonaxe", insertable = false, updatable = false)
+    private Integer idPersonaxe;
+
+    @Id
+    @Column(name = "ocupacion", insertable = false, updatable = false)
+    private String ocupacion;
+
     @ManyToOne
     @JoinColumn(name = "idPelicula")
     private Pelicula pelicula;
+
+
     @ManyToOne
     @JoinColumn(name = "idPersonaxe")
     private Personaxe personaxe;
+
+
     @ManyToOne
     @JoinColumn(name = "ocupacion")
-    private Ocupacion ocupacion;
+    private Ocupacion ocupa;
+
     @Column(length = 50)
     private String personaxeInterpretado;
-
     public PeliculaPersonaxe() {
     }
 
     public PeliculaPersonaxe(Pelicula pelicula, Personaxe personaxe, Ocupacion ocupacion, String personaxeInterpretado) {
         this.pelicula = pelicula;
         this.personaxe = personaxe;
-        this.ocupacion = ocupacion;
+        this.ocupa = ocupacion;
         this.personaxeInterpretado = personaxeInterpretado;
     }
 
@@ -46,11 +61,11 @@ public class PeliculaPersonaxe {
     }
 
     public Ocupacion getOcupacion() {
-        return ocupacion;
+        return ocupa;
     }
 
     public void setOcupacion(Ocupacion ocupacion) {
-        this.ocupacion = ocupacion;
+        this.ocupa = ocupacion;
     }
 
     public String getPersonaxeInterpretado() {
@@ -64,7 +79,7 @@ public class PeliculaPersonaxe {
     @Override
     public String toString() {
         return " [" + personaxe +
-                "] (" + ocupacion +
+                "] (" + ocupa +
                 ") as '" + personaxeInterpretado + '\'';
     }
 }

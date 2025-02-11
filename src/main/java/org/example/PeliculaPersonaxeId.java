@@ -1,25 +1,18 @@
 package org.example;
 
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
 import java.util.Objects;
-
+@Embeddable
 public class PeliculaPersonaxeId implements Serializable {
-    Integer idPersonaxe;
-    Integer idPelicula;
-    String ocupacion;
+    private Integer idPelicula;
+    private Integer idPersonaxe;
+    private String ocupacion;
 
     public PeliculaPersonaxeId() {
-    }
-
-    public Integer getIdPersonaxe() {
-        return idPersonaxe;
-    }
-
-    public void setIdPersonaxe(Integer idPersonaxe) {
-        this.idPersonaxe = idPersonaxe;
     }
 
     public Integer getIdPelicula() {
@@ -28,6 +21,14 @@ public class PeliculaPersonaxeId implements Serializable {
 
     public void setIdPelicula(Integer idPelicula) {
         this.idPelicula = idPelicula;
+    }
+
+    public Integer getIdPersonaxe() {
+        return idPersonaxe;
+    }
+
+    public void setIdPersonaxe(Integer idPersonaxe) {
+        this.idPersonaxe = idPersonaxe;
     }
 
     public String getOcupacion() {
@@ -43,20 +44,20 @@ public class PeliculaPersonaxeId implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PeliculaPersonaxeId that = (PeliculaPersonaxeId) o;
-        return Objects.equals(idPersonaxe, that.idPersonaxe) && Objects.equals(idPelicula, that.idPelicula) && Objects.equals(ocupacion, that.ocupacion);
+        return Objects.equals(idPelicula, that.idPelicula) && Objects.equals(idPersonaxe, that.idPersonaxe) && Objects.equals(ocupacion, that.ocupacion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPersonaxe, idPelicula, ocupacion);
+        return Objects.hash(idPelicula, idPersonaxe, ocupacion);
     }
 
     @Override
     public String toString() {
         return "PeliculaPersonaxeId{" +
-                "idPersonaxe=" + idPersonaxe +
-                ", idPelicula=" + idPelicula +
-                ", ocupacion='" + ocupacion + '\'' +
+                "idPelicula=" + idPelicula +
+                ", idPersonaxe=" + idPersonaxe +
+                ", ocupacion=" + ocupacion +
                 '}';
     }
 }
