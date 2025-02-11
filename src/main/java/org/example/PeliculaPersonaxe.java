@@ -1,11 +1,20 @@
 package org.example;
 
+import jakarta.persistence.*;
+
+@Entity
+@IdClass(PeliculaPersonaxeId.class)
 public class PeliculaPersonaxe {
-
+    @ManyToOne
+    @JoinColumn(name = "idPelicula")
     private Pelicula pelicula;
+    @ManyToOne
+    @JoinColumn(name = "idPersonaxe")
     private Personaxe personaxe;
+    @ManyToOne
+    @JoinColumn(name = "ocupacion")
     private Ocupacion ocupacion;
-
+    @Column(length = 50)
     private String personaxeInterpretado;
 
     public PeliculaPersonaxe() {

@@ -1,8 +1,14 @@
 package org.example;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+@Entity
 public class Ocupacion {
-
+    @Id
+    @Column (length = 50)
     private String ocupacion;
+    @Column (precision = 11)
     private Integer orde;
 
     public Ocupacion() {

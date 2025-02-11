@@ -1,31 +1,51 @@
 package org.example;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
 import java.time.LocalDateTime;
-
+@Entity
 public class Personaxe {
-
-    private Long idPersonaxe;
+    @Id
+    @Column(precision = 10)
+    private Integer idPersonaxe;
+    @Column(length = 16)
     private String importancia;
+    @Column(length=125)
     private String nome;
+    @Column(length = 125)
     private String nomeOrdenado;
+    @Column(length = 125)
     private String nomeOrixinal;
+    @Column(length = 6)
     private String sexo;
     private LocalDateTime dataNacemento;
+    @Column(length = 125)
     private String paisNacemento;
+    @Column(length = 125)
     private String cidadeNacemento;
     private LocalDateTime dataDefuncion;
+    @Column(length = 125)
     private String paisDefuncion;
+    @Column(length = 125)
     private String cidadeDefuncion;
+    @Column(length = 1)
     private String estudio;
+    @Column(length = 1)
     private String bio;
+    @Lob
     private String texto;
+    @Lob
     private String textoFilmografia;
+    @Column(length = 10)
     private String revisado;
 
     public Personaxe() {
     }
 
-    public Personaxe(Long idPersonaxe, String importancia, String nome, String nomeOrdenado, String nomeOrixinal, String sexo, LocalDateTime dataNacemento, String paisNacemento, String cidadeNacemento, LocalDateTime dataDefuncion, String paisDefuncion, String cidadeDefuncion, String estudio, String bio, String texto, String textoFilmografia, String revisado) {
+    public Personaxe(Integer idPersonaxe, String importancia, String nome, String nomeOrdenado, String nomeOrixinal, String sexo, LocalDateTime dataNacemento, String paisNacemento, String cidadeNacemento, LocalDateTime dataDefuncion, String paisDefuncion, String cidadeDefuncion, String estudio, String bio, String texto, String textoFilmografia, String revisado) {
         this.idPersonaxe = idPersonaxe;
         this.importancia = importancia;
         this.nome = nome;
@@ -45,11 +65,11 @@ public class Personaxe {
         this.revisado = revisado;
     }
 
-    public Long getIdPersonaxe() {
+    public Integer getIdPersonaxe() {
         return idPersonaxe;
     }
 
-    public void setIdPersonaxe(Long idPersonaxe) {
+    public void setIdPersonaxe(Integer idPersonaxe) {
         this.idPersonaxe = idPersonaxe;
     }
 

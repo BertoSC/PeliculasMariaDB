@@ -1,28 +1,53 @@
 package org.example;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import org.checkerframework.checker.units.qual.C;
+
+@Entity
 public class Pelicula {
-    private Long idPelicula;
+    @Id
+    @Column(precision= 10)
+    private Integer idPelicula;
+    @Column (length = 50)
     private String musica;
+    @Column (length = 125)
     private String orixinal;
+    @Column (length = 125)
     private String ingles;
+    @Column (length = 125)
     private String castelan;
+    @Column (length = 50)
     private String xenero;
+    @Column (precision = 5)
     private Short anoInicio;
+    @Column (precision = 5)
     private Short anoFin;
+    @Column (length = 125)
     private String pais;
+    @Column (precision = 5)
     private Short duracion;
+    @Column (length = 25)
     private String outrasDuracions;
+    @Column(length = 25)
     private String cor;
+    @Column(length = 6)
     private String son;
+    @Column (length = 2)
     private String video;
+    @Lob
     private String texto;
+    @Lob
     private byte[] poster;
+    @Column (length = 10)
     private String revisado;
 
     public Pelicula() {
     }
 
-    public Pelicula(Long idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, Short anoFin, String pais, Short duracion, String outrasDuracions, String cor, String son, String video, String texto, byte[] poster, String revisado) {
+    public Pelicula(Integer idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, Short anoFin, String pais, Short duracion, String outrasDuracions, String cor, String son, String video, String texto, byte[] poster, String revisado) {
         this.idPelicula = idPelicula;
         this.musica = musica;
         this.orixinal = orixinal;
@@ -42,11 +67,11 @@ public class Pelicula {
         this.revisado = revisado;
     }
 
-    public Long getIdPelicula() {
+    public Integer getIdPelicula() {
         return idPelicula;
     }
 
-    public void setIdPelicula(Long idPelicula) {
+    public void setIdPelicula(Integer idPelicula) {
         this.idPelicula = idPelicula;
     }
 
