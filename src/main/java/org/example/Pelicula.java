@@ -47,6 +47,12 @@ public class Pelicula {
     public Pelicula() {
     }
 
+    public Pelicula(String orixinal, Short anoInicio, Short anoFin) {
+        this.orixinal = orixinal;
+        this.anoInicio = anoInicio;
+        this.anoFin = anoFin;
+    }
+
     public Pelicula(Integer idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, Short anoFin, String pais, Short duracion, String outrasDuracions, String cor, String son, String video, String texto, byte[] poster, String revisado) {
         this.idPelicula = idPelicula;
         this.musica = musica;
